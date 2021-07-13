@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import DogPosts from "./DogPosts";
 import SearchBar from "./SearchBar";
 import Header from "./Header";
+import PostForm from "./PostForm";
 
 function Homepage(){
     const [posts, setPosts] = useState([])
@@ -15,6 +16,7 @@ function Homepage(){
     return(
         <div>
             <Header/>
+            <PostForm />
             <SearchBar/>
             <DogPosts posts={posts}/>
         </div>

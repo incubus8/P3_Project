@@ -9,9 +9,9 @@ function Header(){
 
     return (
 
-        <div>
+        <div className='header'>
 
-
+        <h1>Petsagram</h1>
         </div>
     )
 }
