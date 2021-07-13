@@ -7,12 +7,14 @@ import PostForm from "./PostForm";
 function Homepage(){
     const [posts, setPosts] = useState([])
 
+
     useEffect((e) => {
-        fetch('http://localhost:9393/')
+        fetch('http://localhost:9393/pet_posts')
         .then(resp => resp.json())
         .then(data => setPosts(data))
     }, [])
- 
+
+ ;
     return(
         <div>
             <Header/>
