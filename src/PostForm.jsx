@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export default function PostForm() {
+export default function PostForm({newPost, setNewPost, addPost}) {
     const [name, setName] = useState("")
     const [img, setImg] = useState("")
     const [breed, setBreed] = useState("")
@@ -11,7 +11,7 @@ export default function PostForm() {
     const handleBreed = (e) => setBreed(e.target.value)
     const handleDescription = (e) => setDescription(e.target.value)
 
-    function handleSubmit(){
+    function handleSubmit(e){
         e.preventDefault()
         let formData = {
             name: name,
@@ -19,8 +19,18 @@ export default function PostForm() {
             img_url: img,
             description: description
         }
-    }
 
+        fetch('http://localhost:9393/pet_posts', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                },
+            body: JSON.stringify(formData),
+            })
+            .then((res) => res.json())
+            .then(postData => addPost(postData))
+         }
+    
     return (
         <div>
             <form onSubmit={handleSubmit}>

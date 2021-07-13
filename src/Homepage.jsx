@@ -6,19 +6,23 @@ import PostForm from "./PostForm";
 
 function Homepage(){
     const [posts, setPosts] = useState([])
-
-
+    const [newPost, setNewPost] = useState([])
+    
     useEffect((e) => {
         fetch('http://localhost:9393/pet_posts')
         .then(resp => resp.json())
         .then(data => setPosts(data))
     }, [])
 
+    const addPost = (newPost) => {
+        let postArray = [newPost, ...posts]
+        setNewPost(postArray)
+      }
  ;
     return(
         <div>
             <Header/>
-            <PostForm />
+            <PostForm newPost={newPost} setNewPost={setNewPost} addPost={addPost}/>
             <SearchBar/>
             <DogPosts posts={posts}/>
         </div>
