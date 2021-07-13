@@ -4,14 +4,11 @@ import React from 'react'
 function Header(){
 
 
-
-
-
-    return (
+ return (
 
         <div className='header'>
 
-        <h1>Petsagram</h1>
+        <h1>Dogsagram</h1>
         </div>
     )
 }

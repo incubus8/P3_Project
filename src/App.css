@@ -44,4 +44,21 @@
 
 .header {
   text-align: center;
+  font-family: 'Lobster', cursive;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+#post-card {
+  margin-top: 20px;
+  margin-left: 300px;
+  border-color: white;
+}
+#arrow-button {
+  background-color: white;
+  border-color: white;
+  /* width: 50px;
+  height: 25px; */
+  box-shadow: white;
+  
 }

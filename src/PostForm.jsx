@@ -32,7 +32,7 @@ export default function PostForm({newPost, setNewPost, addPost}) {
          }
     
     return (
-        <div>
+        <div className="card" style={{width: "40rem"}} id="post-card">
             <form onSubmit={handleSubmit}>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Pet's Name</label>

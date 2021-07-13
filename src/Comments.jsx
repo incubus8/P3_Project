@@ -1,21 +1,32 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 
 
 export default function Comments({comments}){
     const commentsArr = comments.map(comment => {
-        return comment.content
+        let userComments = comment.content
+        return <li>{userComments}</li>
     })
-    console.log("hi", commentsArr);
+
+    const[isClicked, setClick] = useState(false)
+    
+    const handleClick = (e) => {
+        setClick(!isClicked)
+    }
 
 
-
-
-
-    return(
+     return(
+         <div>
+             <h5 style={{float:'left'}}>💬 {commentsArr.length}</h5><button type="button" class="btn btn-light" onClick={handleClick} id="arrow-button"style={{float:'left'}}>⤵</button>
+        { isClicked ?
         <div>
-            <h5>Comments:</h5>
-            <p>{commentsArr}</p>
+            <br/>
+            <br/>
+             <ul>{commentsArr}</ul>
+        </div>
+        :
+        null
+        }
         </div>
 
     )
