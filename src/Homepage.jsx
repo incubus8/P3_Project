@@ -6,7 +6,7 @@ import Header from "./Header";
 function Homepage(){
     const [posts, setPosts] = useState([])
 
-    useEffect(() => {
+    useEffect((e) => {
         fetch('http://localhost:9393/')
         .then(resp => resp.json())
         .then(data => setPosts(data))
@@ -17,7 +17,8 @@ function Homepage(){
         <div>
             <Header/>
             <SearchBar/>
-            <DogPosts/>
+            <h1>Hello</h1>
+            <DogPosts posts={posts}/>
         </div>
 
 

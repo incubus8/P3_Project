@@ -2,19 +2,20 @@ import React from 'react'
 import DogCard from './DogCard'
 
 
-function DogPosts(){
+function DogPosts({posts}){
 
-
+    const postsArray = posts.map((post) => {
+        return <DogCard
+        key={post.id}
+        {...post}
+        />
+    })
 
 
 
     return (
 
-        <div>
-            <DogCard/>
-
-
-        </div>
+        <div>{postsArray}</div>
     )
 }
 

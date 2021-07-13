@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function DogCard(){
+function DogCard({id, likes, img_url, description}){
 
 
 
