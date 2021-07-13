@@ -3,7 +3,7 @@ import DogCard from './DogCard'
 
 
 function DogPosts({posts}){
-
+ 
     const postsArray = posts.map((post) => {
         return <DogCard
         key={post.id}
@@ -16,6 +16,7 @@ function DogPosts({posts}){
     return (
 
         <div>{postsArray}</div>
+        
     )
 }
 

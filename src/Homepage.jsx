@@ -11,13 +11,11 @@ function Homepage(){
         .then(resp => resp.json())
         .then(data => setPosts(data))
     }, [])
-
-
+ 
     return(
         <div>
             <Header/>
             <SearchBar/>
-            <h1>Hello</h1>
             <DogPosts posts={posts}/>
         </div>
 
