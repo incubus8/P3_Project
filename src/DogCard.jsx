@@ -55,7 +55,7 @@ return (
     <p class="card-text">{description}</p>
     <p>❤️ {isLiked}</p>
    <button onClick={handleLikes} class="btn btn-primary">Like</button>
-   <button onClick={handleDeleteClick} class="btn btn-primary">Remove Post</button>
+   <button onClick={handleDeleteClick} class="btn btn-light" title="delete" style={{float:'right'}}>🗑</button>
    <hr/>
     <div><Comments comments={comments} id={id} displayComment={displayComment}/></div>
   </div>
