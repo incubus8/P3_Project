@@ -48,7 +48,7 @@ return (
     <p>❤️ {isLiked}</p>
    <button onClick={handleLikes} class="btn btn-primary">Like</button>
    <hr/>
-    <div><Comments comments={comments}/></div>
+    <div><Comments comments={comments} id={id}/></div>
   </div>
   </div>
 

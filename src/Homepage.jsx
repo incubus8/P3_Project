@@ -7,7 +7,9 @@ import PostForm from "./PostForm";
 function Homepage(){
     const [posts, setPosts] = useState([])
     const [newPost, setNewPost] = useState([])
-    
+    const [searchValue, setSearchValue] = useState("")
+
+
     useEffect((e) => {
         fetch('http://localhost:9393/pet_posts')
         .then(resp => resp.json())
@@ -18,13 +20,24 @@ function Homepage(){
         let postArray = [newPost, ...posts]
         setNewPost(postArray)
       }
- ;
+
+      const handleSearch = (e) => {
+        setSearchValue(e.target.value)
+      }
+
+      const filterDogs= posts.filter(post => {
+          return (post.breed.toLowerCase().includes(searchValue.toLowerCase()))
+          ||
+          (post.name.toLowerCase().includes(searchValue.toLowerCase()))
+      })
+
+ 
     return(
         <div>
             <Header/>
-            <SearchBar/>
+            <SearchBar handleSearch={handleSearch}/>
             <PostForm newPost={newPost} setNewPost={setNewPost} addPost={addPost}/>
-             <DogPosts posts={posts}/>
+             <DogPosts posts={filterDogs}/>
         </div>
 
 

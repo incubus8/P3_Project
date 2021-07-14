@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 
 export default function PostForm({addPost}) {
-    const [name, setName] = useState("")
-    const [img, setImg] = useState("")
-    const [breed, setBreed] = useState("")
-    const [description, setDescription] = useState("")
+    const [name, setName] = useState("John")
+    const [img, setImg] = useState("https://i.pinimg.com/564x/49/ac/45/49ac452e72e652cfd985ce2b179adc5e.jpg")
+    const [breed, setBreed] = useState("Pomeranian")
+    const [description, setDescription] = useState("Small ball of fur")
 
     const handleName = (e) => setName(e.target.value)
     const handleImg = (e) => setImg(e.target.value)
