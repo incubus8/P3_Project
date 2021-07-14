@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export default function PostForm({newPost, setNewPost, addPost}) {
+export default function PostForm({addPost}) {
     const [name, setName] = useState("")
     const [img, setImg] = useState("")
     const [breed, setBreed] = useState("")
@@ -29,6 +29,8 @@ export default function PostForm({newPost, setNewPost, addPost}) {
             })
             .then((res) => res.json())
             .then(postData => addPost(postData))
+
+            const clearForm =[setName(""), setImg(""), setBreed(""), setDescription("")]
          }
     
     return (

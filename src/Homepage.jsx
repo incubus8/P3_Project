@@ -22,9 +22,9 @@ function Homepage(){
     return(
         <div>
             <Header/>
-            <PostForm newPost={newPost} setNewPost={setNewPost} addPost={addPost}/>
             <SearchBar/>
-            <DogPosts posts={posts}/>
+            <PostForm newPost={newPost} setNewPost={setNewPost} addPost={addPost}/>
+             <DogPosts posts={posts}/>
         </div>
 
 

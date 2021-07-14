@@ -62,3 +62,8 @@
   box-shadow: white;
   
 }
+.searchbar {
+  display: block;
+  border-color: lightgray;
+  border-width: 2px;
+}

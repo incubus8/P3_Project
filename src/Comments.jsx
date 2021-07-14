@@ -17,11 +17,12 @@ export default function Comments({comments}){
 
      return(
          <div>
-             <h5 style={{float:'left'}}>💬 {commentsArr.length}</h5><button type="button" class="btn btn-light" onClick={handleClick} id="arrow-button"style={{float:'left'}}>⤵</button>
+             <h5 style={{float:'left'}}>💬 {commentsArr.length} </h5><button type="button" class="btn btn-light" onClick={handleClick} id="arrow-button"style={{float:'left'}}> ⤵</button>
         { isClicked ?
         <div>
             <br/>
             <br/>
+            <h5>Comments</h5>
              <ul>{commentsArr}</ul>
         </div>
         :
