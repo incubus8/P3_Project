@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Comments from './Comments'
 
 
-export default function DogCard({id, likes, img_url, description, name, breed}){
+export default function DogCard({id, likes, img_url, description, name, breed, handleDelete}){
 
     const [isLiked, setIsLiked] = useState(likes)
     const [comments, setComments] = useState([])
@@ -15,8 +15,16 @@ export default function DogCard({id, likes, img_url, description, name, breed}){
     }, [])
 
 
-    // const comLis = comments.map(comm => )
+    const displayComment = (newComment) => {
+        let commentArray = [newComment, ...comments]
+        return setComments(commentArray)
+    }
 
+    const handleDeleteClick = () => {
+        handleDelete(id)
+      }
+
+    
 
     function  handleLikes(e){
         const newLike = isLiked + 1
@@ -47,8 +55,9 @@ return (
     <p class="card-text">{description}</p>
     <p>❤️ {isLiked}</p>
    <button onClick={handleLikes} class="btn btn-primary">Like</button>
+   <button onClick={handleDeleteClick} class="btn btn-primary">Remove Post</button>
    <hr/>
-    <div><Comments comments={comments} id={id}/></div>
+    <div><Comments comments={comments} id={id} displayComment={displayComment}/></div>
   </div>
   </div>
 

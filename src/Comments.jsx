@@ -3,19 +3,14 @@ import Comment from './Comment'
 
 
 
-export default function Comments({comments, id}){
+export default function Comments({comments, id, displayComment}){
     const [addComment, setAddComment] = useState("")
-    const [newComment, setNewComment] = useState("")
+    
 
     const commentsArr = comments.map(comment => {
-        return <Comment {...comment} />
+        return <Comment key={comment.id} {...comment} />
     })
   
-    const displayComment = (newComment) => {
-        let commentArray = [newComment, ...commentsArr]
-        return setNewComment(commentArray)
-    }
-
     const[isClicked, setClick] = useState(false)
     
     const handleClick = (e) => {
@@ -29,11 +24,12 @@ export default function Comments({comments, id}){
     const handleCommentSubmit = (e) =>{
         e.preventDefault()
         let commentData = {
+            pet_post_id: id,
             content: addComment,
-            user_id: 15
+            user_id: 1
         }
 
-    fetch(`http://localhost:9393/pet_posts/${id}/comments`, {
+    fetch(`http://localhost:9393/pet_posts/comments`, {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
@@ -41,7 +37,7 @@ export default function Comments({comments, id}){
             body: JSON.stringify(commentData),
             })
             .then((res) => res.json())
-            .then(postData => displayComment(postData))
+            .then(singleComment => displayComment(singleComment))
             
             setAddComment("")
 
@@ -66,7 +62,7 @@ export default function Comments({comments, id}){
                     
                 </div>
             </form>
-             <ul>{newComment}</ul>
+             <ul>{commentsArr}</ul>
         </div>
         :
         null

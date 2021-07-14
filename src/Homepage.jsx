@@ -9,6 +9,17 @@ function Homepage(){
     const [newPost, setNewPost] = useState([])
     const [searchValue, setSearchValue] = useState("")
 
+    const handleDelete = (id) => {
+        fetch(`http://localhost:9393/pet_posts/${id}`, {
+          method: "DELETE",
+        })
+          .then((r) => r.json())
+          .then(() => {
+            const updatedPosts = posts.filter((post) => post.id !== id);
+            setPosts(updatedPosts);
+          });
+      }
+
 
     useEffect((e) => {
         fetch('http://localhost:9393/pet_posts')
@@ -37,7 +48,7 @@ function Homepage(){
             <Header/>
             <SearchBar handleSearch={handleSearch}/>
             <PostForm newPost={newPost} setNewPost={setNewPost} addPost={addPost}/>
-             <DogPosts posts={filterDogs}/>
+             <DogPosts posts={filterDogs} handleDelete={handleDelete}/>
         </div>
 
 
