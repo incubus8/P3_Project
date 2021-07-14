@@ -17,7 +17,7 @@ export default function Comment({content, user_id}){
          <div>
              <br/>
          <div className="comment-section">
-        <h6>{user.name} :</h6>
+        <h6>{user.name} </h6>
         <li> {content}</li>
         </div>
       </div>
