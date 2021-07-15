@@ -28,7 +28,7 @@ function Homepage(){
     }, [])
 
     const addPost = (newPost) => {
-        let postArray = [newPost, ...posts]
+        let postArray = [...posts, newPost]
         setNewPost(postArray)
       }
 

@@ -62,7 +62,8 @@ export default function Comments({comments, id, displayComment}){
                     
                 </div>
             </form>
-             <ul>{commentsArr}</ul>
+                <br/>
+                <ul>{commentsArr}</ul>
         </div>
         :
         null
