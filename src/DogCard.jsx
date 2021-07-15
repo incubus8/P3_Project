@@ -16,7 +16,7 @@ export default function DogCard({id, likes, img_url, description, name, breed, h
 
 
     const displayComment = (newComment) => {
-        let commentArray = [newComment, ...comments]
+        let commentArray = [...comments, newComment]
         return setComments(commentArray)
     }
 
@@ -53,7 +53,7 @@ return (
         <h4 class="card-title">{name} 🐾</h4>
         <h6 class="card-title">Breed: {breed}</h6>
         <p class="card-text">{description}</p>
-        <p>❤️ {isLiked}</p>
+        <p>❤️  {isLiked}</p>
     <button onClick={handleLikes} class="btn btn-primary">Like</button>
     <button onClick={handleDeleteClick} class="btn btn-light" title="delete" style={{float:'right'}}>🗑</button>
     <hr/>

@@ -6,7 +6,6 @@ import PostForm from "./PostForm";
 
 function Homepage(){
     const [posts, setPosts] = useState([])
-    const [newPost, setNewPost] = useState([])
     const [searchValue, setSearchValue] = useState("")
 
     const handleDelete = (id) => {
@@ -15,7 +14,9 @@ function Homepage(){
         })
           .then((r) => r.json())
           .then(() => {
-            const updatedPosts = posts.filter((post) => post.id !== id);
+            const updatedPosts = posts.filter((post) => {
+              console.log("posts", post.id, id);
+              return post.id !== (id)})
             setPosts(updatedPosts);
           });
       }
@@ -28,8 +29,9 @@ function Homepage(){
     }, [])
 
     const addPost = (newPost) => {
+      console.log("postData");
         let postArray = [...posts, newPost]
-        setNewPost(postArray)
+        setPosts(postArray)
       }
 
       const handleSearch = (e) => {
@@ -45,7 +47,7 @@ function Homepage(){
  
     return(
         <div>
-            <PostForm newPost={newPost} setNewPost={setNewPost} addPost={addPost}/>
+            <PostForm addPost={addPost}/>
             <SearchBar handleSearch={handleSearch}/>
             <Header/>
             <DogPosts posts={filterDogs} handleDelete={handleDelete}/>
