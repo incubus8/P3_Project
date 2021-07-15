@@ -39,27 +39,32 @@ export default function PostForm({addPost}) {
     }
 
     return (
-        <div className="card" id="post-card" style={{width: "50rem"}}>
+        <div className="card" id="post-card" style={{width: "52rem"}}>
             <button onClick={handleForm} type="submit" class="btn btn-primary"
-            style={{boxShadow: '3px 1px 1px 1px #00000034', borderRadius: "25px", borderWidth:"0.5px"}}>Post a pet!</button>
+            style={{boxShadow: '3px 1px 1px 1px #00000034', borderRadius: "25px", borderWidth:"0.5px", width: "13rem"}}>Post a pet!</button>
             <br/>
 
             {form ? 
             
             <form onSubmit={handleSubmit}>
 
-                <div class="">
-                    <div class="">
-                    <input  type="text" class="form-control" id="pets-name" placeholder="Pet's Name" value={name} onChange={handleName}/>
-
-                    <input type="text" class="form-control" id="breed" placeholder="Dog Breed" value={breed} onChange={handleBreed}/>
-                
-                    <input type="text" class="form-control" id="img" placeholder="Pet Image URL" value={img} onChange={handleImg}/>
-                
-                    <input type="text" class="form-control" id="description" placeholder="Describe your picture" value={description} onChange={handleDescription}/>
+                <div class="row">
+                    <div class="col">
+                        <input  type="text" class="form-control" id="pets-name" placeholder="Pet's Name" value={name} onChange={handleName}/>
+                    </div>
+                    <div class="col" style={{paddingLeft: "1px"}}>
+                        <input type="text" class="form-control" id="breed" placeholder="Dog Breed" value={breed} onChange={handleBreed}/>
+                    </div>
+                    <div class="col" style={{paddingLeft: "1px"}}>
+                        <input type="text" class="form-control" id="img" placeholder="Pet Image URL" value={img} onChange={handleImg}/>
+                    </div>
+                    <div class="col" style={{paddingLeft: "1px"}}>
+                        <input type="text" class="form-control" id="description" placeholder="Description" value={description} onChange={handleDescription}/>
+                    </div>
+                    <div class="col" style={{paddingLeft: "1px"}}>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             :    
             null
