@@ -38,22 +38,26 @@
 } */
 
 #dog-card {
+  margin: 0 auto;
+  float: none;
   margin-top: 20px;
-  margin-left: 300px;
+  /* margin-right: 25vw; */
+  
 }
 
 .header {
   text-align: center;
   font-family: 'Lobster', cursive;
   margin-bottom: 50px;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 #post-card {
   margin-top: 20px;
-  margin-left: 300px;
+  margin-left: 30px;
   border-color: white;
 }
+
 #arrow-button {
   background-color: white;
   border-color: white;
@@ -65,7 +69,11 @@
 .searchbar {
   display: block;
   border-color: lightgray;
-  border-width: 2px;
+  /* margin: 0 auto; */
+  float: right;
+  margin-top: -88px;
+  margin-bottom: 50px;
+  margin-right: 60px;
 }
 
 .comment-section {
@@ -77,3 +85,8 @@
   padding-left: 15px;
   list-style-type: none;
 }
+
+.form-label {
+  float: left;
+}
+

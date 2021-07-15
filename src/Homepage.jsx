@@ -45,10 +45,10 @@ function Homepage(){
  
     return(
         <div>
-            <Header/>
-            <SearchBar handleSearch={handleSearch}/>
             <PostForm newPost={newPost} setNewPost={setNewPost} addPost={addPost}/>
-             <DogPosts posts={filterDogs} handleDelete={handleDelete}/>
+            <SearchBar handleSearch={handleSearch}/>
+            <Header/>
+            <DogPosts posts={filterDogs} handleDelete={handleDelete}/>
         </div>
 
 
