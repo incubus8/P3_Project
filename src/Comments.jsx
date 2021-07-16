@@ -29,7 +29,7 @@ export default function Comments({comments, id, displayComment}){
             user_id: 1
         }
 
-    fetch(`http://localhost:9393/pet_posts/comments`, {
+    fetch(`http://localhost:9292/pet_posts/comments`, {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',

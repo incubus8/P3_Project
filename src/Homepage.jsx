@@ -9,7 +9,7 @@ function Homepage(){
     const [searchValue, setSearchValue] = useState("")
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:9393/pet_posts/${id}`, {
+        fetch(`http://localhost:9292/pet_posts/${id}`, {
           method: "DELETE",
         })
           .then((r) => r.json())
@@ -23,7 +23,7 @@ function Homepage(){
 
 
     useEffect((e) => {
-        fetch('http://localhost:9393/pet_posts')
+        fetch('http://localhost:9292/pet_posts')
         .then(resp => resp.json())
         .then(data => setPosts(data))
     }, [])

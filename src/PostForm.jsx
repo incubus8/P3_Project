@@ -21,7 +21,7 @@ export default function PostForm({addPost}) {
             description: description
         }
 
-        fetch('http://localhost:9393/pet_posts', {
+        fetch('http://localhost:9292/pet_posts', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',

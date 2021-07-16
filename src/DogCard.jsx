@@ -9,7 +9,7 @@ export default function DogCard({id, likes, img_url, description, name, breed, h
 
 
     useEffect((e) => {
-        fetch(`http://localhost:9393/pet_posts/${id}/comments`)
+        fetch(`http://localhost:9292/pet_posts/${id}/comments`)
         .then(resp => resp.json())
         .then(data => setComments(data))
     }, [])
@@ -28,7 +28,7 @@ export default function DogCard({id, likes, img_url, description, name, breed, h
 
     function  handleLikes(e){
         const newLike = isLiked + 1
-        fetch (`http://localhost:9393/pet_posts/${id}`,{
+        fetch (`http://localhost:9292/pet_posts/${id}`,{
             method: 'PATCH',
             headers: {
               'Content-Type': 'application/json'
